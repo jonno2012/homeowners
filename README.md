@@ -88,4 +88,13 @@ One of our engineers will assess each and every submission we receive, and provi
 * Is it easy to get up and running and assess?
 
 
+### AI Usage and coding standards implementations
+* The core logic files in the src directory were not done using AI.
+* I always ask Cursor AI to suggest best practices on a file or piece of code that I have written. For example that could mean it might suggest that I use a 'final read only' declaration in a class definition or something of that nature, in which case I will often follow it's suggestion and do a quick bit of research into the suggestions it has made. I have found that this has increased my depth of knowledge of the often lesser used features of PHP.
+* I have generated all the unit tests using Cursor AI and then checked them thoroughly myself. They simply test every permutation of homeowner as provided in the examples.csv file.
+* The .cursorrules file contains a template that I use for non Laravel, vanilla PHP work. The guidelines in here are intended to mirror the rules/standards set in the coding standards packages I have used (see "scripts" declaration in composer.json).
+* I have used a similar configuration of coding standards packages and scripts commands as I would usually do in a real world environment.
 
+### SETUP
+* Run composer install to setup.
+* Run php parse.php to run the code.
