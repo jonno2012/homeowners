@@ -1,0 +1,30 @@
+includes:
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+  - vendor/phpstan/phpstan-phpunit/extension.neon
+
+parameters:
+  level: 8
+
+  paths:
+    - src
+    - tests
+
+  tmpDir: var/phpstan
+
+  excludePaths:
+    - vendor
+    - var
+
+  reportUnmatchedIgnoredErrors: true
+  treatPhpDocTypesAsCertain: false
+
+  ignoreErrors:
+    # PHPUnit uses magic methods for assertions - this is expected behavior
+    -
+      message: '#Dynamic call to static method PHPUnit\\Framework\\Assert::#'
+      path: tests
+    # Redundant assertions that PHPStan already knows are true
+    -
+      message: '#Call to method PHPUnit\\Framework\\Assert::(assertIsArray|assertInstanceOf)\(\) with .* will always evaluate to true#'
+      path: tests
